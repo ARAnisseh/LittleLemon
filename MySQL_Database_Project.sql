@@ -1,4 +1,5 @@
 -- MySQL Database Project
+-- LittleLemon
 -- The code to create the database is as follows:
 CREATE DATABASE IF NOT EXISTS Little_Lemon;
 -- The code to see if the database is created:
