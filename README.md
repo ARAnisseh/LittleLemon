@@ -115,6 +115,7 @@ FROM Bookings
 WHERE BookingDate < '2021-11-13' AND NumberOfGuests > 3;
 
 SELECT * FROM BookingsView;
+
 Task 9: Create a Stored Procedure.
 
 DELIMITER //
