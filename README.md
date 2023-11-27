@@ -63,32 +63,31 @@ INSERT INTO Courses (CourseName, Cost) VALUES
 Task Instructions
 
 Task 1: Filter data using the WHERE Clause and Logical Operators.
-sql
-Copy code
+
 SELECT * FROM Bookings
 WHERE BookingDate BETWEEN '2021-11-11' AND '2021-11-13';
+
 Task 2: Create a JOIN Query.
-sql
-Copy code
+
 SELECT Customers.FullName, Bookings.BookingID
 FROM Customers
 JOIN Bookings ON Customers.CustomerID = Bookings.CustomerID
 WHERE BookingDate = '2021-11-11';
+
 Task 3: Create a GROUP BY Query.
-sql
-Copy code
+
 SELECT BookingDate, COUNT(*) as TotalBookings
 FROM Bookings
 GROUP BY BookingDate;
+
 Task 4: Create a REPLACE Statement.
-sql
-Copy code
+
 UPDATE Courses
 SET Cost = 20.00
 WHERE CourseName = 'Kabasa';
+
 Task 5: Create Constraints.
-sql
-Copy code
+
 CREATE TABLE DeliveryAddress (
     ID INT PRIMARY KEY, 
     Address VARCHAR(255) NOT NULL, 
@@ -96,20 +95,20 @@ CREATE TABLE DeliveryAddress (
     CustomerID INT NOT NULL,
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
+
 Task 6: Alter Table Structure.
-sql
-Copy code
+
 ALTER TABLE Courses
 ADD COLUMN Ingredients VARCHAR(255);
+
 Task 7: Create a Subquery.
-sql
-Copy code
+
 SELECT FullName
 FROM Customers
 WHERE CustomerID IN (SELECT CustomerID FROM Bookings WHERE BookingDate = '2021-11-11');
+
 Task 8: Create a Virtual Table.
-sql
-Copy code
+
 CREATE VIEW BookingsView AS
 SELECT BookingID, BookingDate, NumberOfGuests
 FROM Bookings
@@ -117,8 +116,7 @@ WHERE BookingDate < '2021-11-13' AND NumberOfGuests > 3;
 
 SELECT * FROM BookingsView;
 Task 9: Create a Stored Procedure.
-sql
-Copy code
+
 DELIMITER //
 CREATE PROCEDURE GetBookingsData(IN InputDate DATE)
 BEGIN
@@ -127,10 +125,10 @@ END //
 DELIMITER ;
 
 CALL GetBookingsData('2021-11-13');
+
 Task 10: Use the String Function.
-sql
-Copy code
+
 SELECT 
     CONCAT('ID: ', BookingID, ', ', 'Date: ', BookingDate, ', ', 'Number of guests: ', NumberOfGuests) AS 'Booking Details'
 FROM Bookings;
-Feel free to copy and run the provided SQL statements in your MySQL environment to perform the specified tasks in the Little Lemon database.
+
